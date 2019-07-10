@@ -1,0 +1,30 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Date</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function testingDate(){		
+		var dtNow=new Date();
+		dtNow.setDate(18);
+		dtNow.setMonth(10);
+		dtNow.setYear(1999);
+		dtNow.setHours(7);
+		dtNow.setMinutes(2);
+
+		document.write(dtNow.toString()+"<br/>");
+		document.write(dtNow.toLocaleString()+"<br/>");
+		document.write(dtNow.toLocaleDateString()+"<br/>");
+		document.write(dtNow.toLocaleTimeString()+"<br/>");
+		document.write(dtNow.toGMTString()+"<br/>");
+		document.write(dtNow.toUTCString()+"<br/>");
+		alert(sTxt);
+	}
+	// ]]>
+</script>
+</head>
+<body onload="testingDate()">	
+		<p>Some page content</p>
+</body>
+</html>

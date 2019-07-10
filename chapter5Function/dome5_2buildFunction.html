@@ -1,0 +1,30 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Build a Function</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function buildFunction(){	
+		//提示输入函数体和参数	
+		var func=prompt("Enter function body:");
+		var x=prompt("Enter value of x:");
+		var y=prompt("Enter value of y:");
+
+		//调用这个匿名函数
+		var op=new Function("x","y",func);
+		var theAnswer=op(x,y);
+
+		//输出函数执行结果
+		alert("Funtion is:"+func);
+		alert("x is:"+x+",y is:"+y);
+		alert("The Answer is:"+theAnswer);
+
+	}
+	// ]]>
+</script>
+</head>
+<body onload="buildFunction()">	
+		<p>Some page content</p>
+</body>
+</html>

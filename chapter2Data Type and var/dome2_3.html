@@ -1,0 +1,41 @@
+<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Hello,World!</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function convertToNumber(){		
+		var sNum="1.23e-2";
+		document.writeln("<p>"+parseFloat(sNum)+"</p>");
+		document.writeln("<p>"+parseInt(sNum)+"</p>");
+
+		var fValue=parseFloat("1.45 inch");
+		document.writeln("<p>"+fValue+"</p>");
+
+		var iValue=parseInt("-33.50");
+		document.writeln("<p>"+iValue+"</p>");
+		//将十六进制转为十进制
+		var iValue=parseInt("266",16);
+		document.writeln("<p>"+iValue+"</p>");
+		//将八进制转为十进制
+		var iValue=parseInt("55",8);
+		document.writeln("<p>"+iValue+"</p>");
+
+		var fltNumber=432.54;
+		//获取整数部分
+		var intNumber=parseInt(fltNumber);
+		//转换成八进制
+		var octNumber=intNumber.toString(8);
+		//转换成十六进制
+		var hexNumber=intNumber.toString(16);
+		document.writeln(intNumber+"，转换成八进制为："+octNumber+"，转换成十六进制为："+hexNumber);
+	}
+	// ]]>
+</script>
+</head>
+<body onload="convertToNumber()">	
+		<p>I'm still here,Word!</p>
+</body>
+</html>

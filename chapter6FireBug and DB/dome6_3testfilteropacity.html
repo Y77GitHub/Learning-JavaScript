@@ -1,0 +1,50 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>object detection</title>
+<meta charset="utf-8">
+<style type="text/css">
+	div{
+		position: absolute;
+		top:30px;
+		left:50px;
+	}
+	#div1 img{
+		filter:
+		progid:DXImageTransform.Microsoft.AlphaImageLoader(src=fig0902.jpg,sizingMethod='scale');
+	}
+</style>
+<script type="text/javascript">
+	// <![CDATA[
+	window.onload=function () {
+		var divElement=document.getElementById("div1");
+
+		//测试filter对象是否存在
+		var tst1=(divElement.style.filter)?"filter exists":"filter dose not exist";
+		alert(tst1);
+
+		//测试filter对象是否存在
+		var tst2=(typeof(divElement.style.filter)!="undefined")?"filter exists":"filter dose not exist";
+		alert(tst2);
+
+		//测试filter对象是否存在
+		var tst3=(divElement.style.filter!="undefined")?"filter exists":"filter dose not exist";
+		alert(tst3);
+
+		//测试opacity对象是否存在
+		var tst4=(divElement.style.opacity)?"opacity exists":"opacity dose not exist";
+		alert(tst4);
+
+		//测试opacity对象是否存在
+		var tst5=(typeof(divElement.style.opacity)!="undefined")?"opacity exists":"opacity dose not exist";
+		alert(tst5);
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+	<div id="div1">
+		<img src="fig0902.jpg" alt=""/>
+	</div>
+</body>
+</html>

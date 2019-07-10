@@ -1,0 +1,43 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Gotta Split</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function splitstring(){		
+		var inputString=new String('firstName=Yang,lastName=tingting,statement="This is a test,of split"');
+		var arrayTokens=inputString.split(',',3);
+		//按逗号分隔字符串
+		for (var i = 0; i < arrayTokens.length; i++) {
+			document.write(arrayTokens[i]+"<br/>");
+			var newTokens=arrayTokens[i].split('=');
+			document.write(newTokens[1]+"<br/><br/>");
+		}
+
+		var sObj=new String("This is a test string");
+		var sTxt1=sObj.charAt(3);//返回指定位置的字符
+		var sTxt2=sObj.charCodeAt(3);//返回指定位置的Unicode字符编码
+		var sTxt3=sObj.substr(5,8);//返回子字符串，（开始位置，子字符串的长度）
+		var sTxt4=sObj.substring(8,5);//返回子字符串，（开始位置，结束位置）
+		var sTxt5=sObj.slice(8,5);//与substring相同，但不能交换参数位置，返回空字符串
+		var sTxt6=sObj.indexOf("is");//返回所找字符串第一次出现的位置
+		var sTxt7=sObj.lastIndexOf("is");//返回所找字符串最后一次出现的位置
+		var sTxt8=sObj.toUpperCase();//全部转换成大写
+		var sTxt9=sObj.toLowerCase();//全部转换成小写
+		var sTxt10=String.fromCharCode(345,99,99,76);//Unicode转字符串
+
+
+		document.write(sTxt1+"的Unicode字符编码为："+sTxt2+
+			"<br/><br/>substr:"+sTxt3+"<br/>substring:"+sTxt4+"<br/>slice:"+sTxt5+"结束。"+
+			"<br/><br/>indexOf:"+sTxt6+"<br/>lastIndexOf:"+sTxt7+
+			"<br/><br/>大写："+sTxt8+"<br/>小写："+sTxt9+
+			"<br/><br/>Unicode转字符串："+sTxt10);
+	}
+	// ]]>
+</script>
+</head>
+<body onload="splitstring()">	
+		<p>Some page content</p>
+</body>
+</html>

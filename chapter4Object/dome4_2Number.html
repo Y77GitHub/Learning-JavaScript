@@ -1,0 +1,28 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Number methods</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function numbers(){		
+		var newNumber=new Number(34.8896);
+		document.write(newNumber.toExponential(6)+"<br/>");
+		document.write(newNumber.toPrecision(3)+"<br/>");
+		document.write(newNumber.toFixed(6)+"<br/>");
+
+		var newValue=newNumber.valueOf();
+		document.write(newValue.toString(2)+"<br/>");
+		document.write(newValue.toString(8)+"<br/>");
+		document.write(newValue.toString(10)+"<br/>");
+		document.write(newValue.toString(16)+"<br/>");
+
+
+	}
+	// ]]>
+</script>
+</head>
+<body onload="numbers()">	
+		<p>Some page content</p>
+</body>
+</html>

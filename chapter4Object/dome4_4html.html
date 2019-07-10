@@ -1,0 +1,27 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>String HTML</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function stringHTML(){		
+		var someString=new String("This is the test string");
+
+		document.write(someString.big()+"<br/>");
+		document.write(someString.blink()+"<br/>");
+		document.write(someString.sup()+"<br/>");
+		document.write(someString.strike()+"<br/>");
+		document.write(someString.bold()+"<br/>");
+		document.write(someString.italics()+"<br/>");
+		document.write(someString.small()+"<br/>");
+		document.write(someString.link('http://www.oreilly.com')+"<br/>");
+
+	}
+	// ]]>
+</script>
+</head>
+<body onload="stringHTML()">	
+		<p>Some page content</p>
+</body>
+</html>

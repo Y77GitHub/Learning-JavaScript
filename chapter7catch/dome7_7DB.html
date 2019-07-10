@@ -1,0 +1,47 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Capture/Bubble</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function clickMe(evnt){
+		var eventTarget=evnt.target?evnt.target:evnt.srcElement;
+		alert(eventTarget+" "+evnt.type);
+
+		var canBeCanceled=evnt.cancelable?evnt.cancelable:"NA";
+		alert("Can be Canceled? "+canBeCanceled);
+
+		var bubbleEvent=evnt.bubbles?evnt.bubbles:"NA";
+		alert("Bubbling?"+bubbleEvent);
+
+		var theTime=evnt.timeStamp?evnt.timeStamp:"NA";
+		alert(theTime);
+	}
+	window.onload=function (evnt) {
+		var evtObject=document.getElementById("clickme");
+		
+		//
+		if(evtObject.addEventListener){
+			evtObject.addEventListener("click",clickMe,false);
+		}else if (evtObject.attachEvent) {
+			evtObject.attachEvent("onclick",clickMe);
+		}else if (evtObject.onclick) {
+			evtObject.onclick=clickMe;
+		}
+	}
+	window.onunload=function () {
+		var evtObject=document.getElementById("clickMe");
+		if (evtObject.detachEvent) {
+			evtObject.detachEvent("onclick",clickMe);
+		}
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+		<div id="clickme" style="background-color: #ff0;width: 200px;height: 200px;padding: 20px">
+			<p>Click me</p>
+		</div>
+</body>
+</html>

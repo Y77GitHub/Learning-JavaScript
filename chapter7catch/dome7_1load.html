@@ -1,0 +1,25 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Event Handing</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[	
+	function helloMsg(){		
+		var helloString="hello there";
+		alert(helloString);
+		//helloTwice();
+	}
+
+	function helloTwice(){		
+		var helloString="hi again";
+		alert(helloString);
+	}
+	window.onload=helloTwice;
+	// ]]>
+</script>
+</head>
+<body onload="helloMsg()/*;helloTwice()*/">	
+	<p>Some content</p>
+</body>
+</html>

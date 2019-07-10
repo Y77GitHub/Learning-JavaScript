@@ -1,0 +1,20 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Event Handing</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[	
+	function mouseDown(nsEvent){	
+		var theEvent=nsEvent?nsEvent:window.event;	
+		var locString="X="+theEvent.screenX+",Y="+theEvent.screenY;
+		alert(locString);
+	}
+	document.onmousedown=mouseDown;
+	// ]]>
+</script>
+</head>
+<body>	
+	<p>Some content</p>
+</body>
+</html>

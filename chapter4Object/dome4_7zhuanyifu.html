@@ -1,0 +1,28 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>RegExp</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function matchString(){		
+		var regExp=/\s\*/g;
+		var str="This *is *a *new*string";
+		var resultString=str.replace(regExp,'-');
+		alert(resultString);
+
+		test='"one" or this is also a"test"';
+		var regExp2=/".*"/;//贪婪匹配
+		var regExp3=/".*?"/;//延迟匹配
+
+		re=regExp2.exec(test);
+		re2=regExp3.exec(test);		
+		document.write(re+"<br/>"+re2);
+	}
+	// ]]>
+</script>
+</head>
+<body onload="matchString()">	
+		<p>Some page content</p>
+</body>
+</html>

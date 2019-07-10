@@ -1,0 +1,29 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Pass me</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function alertArgs(strLiteral,aryObject){		
+		strLiteral="Override";
+		aryObject[1]="2";
+		aryObject[aryObject.length]="three";
+	}
+	function testParams(){
+		var str="Original Literal";
+		var ary=new Array("one","two");
+		document.write("string literal is"+str+"<br/>");
+		document.write("Array object is"+ary+"<br/><br/>");
+		alertArgs(str,ary);//按值和按引用传递的参数
+
+		document.write("string literal is"+str+"<br/>");
+		document.write("Array object is"+ary+"<br/><br/>");
+	}
+	// ]]>
+</script>
+</head>
+<body onload="testParams()">	
+		<p>Some page content</p>
+</body>
+</html>

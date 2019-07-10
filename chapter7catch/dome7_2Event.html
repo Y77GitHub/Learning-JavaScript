@@ -1,0 +1,19 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>X/Y Marks the Spot</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[	
+	function mouseDown(){		
+		var locString="X="+window.event.screenX+",Y="+window.event.screenY;
+		alert(locString);
+	}
+	document.onmousedown=mouseDown;
+	// ]]>
+</script>
+</head>
+<body>	
+	<p>Some content</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>FIFO</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function pushPop(){		
+		var fifoArray=new Array();
+		fifoArray.push("Apple");
+		fifoArray.push("Banana");
+
+		var ln=fifoArray.push("Cherry")
+		//输出数组长度和数组内容
+		document.write("length is "+ln+" and array is "+fifoArray+"<br/>");
+
+		//使用shift方法移除元素
+		for (var i = 0; i<ln; i++) {
+			document.write(fifoArray.shift()+"<br/>");
+		}
+		//输出数组长度
+		document.write("length now is "+fifoArray.length+"<br/><br/>");
+
+		//使用unshift方法添加元素
+		var fifoArray=new Array();
+		fifoArray.unshift("Learning");
+		fifoArray.unshift("Java");
+
+		var ln=fifoArray.unshift("Script")
+		//输出数组长度和数组内容
+		document.write("length is "+ln+" and array is "+fifoArray+"<br/>");
+
+		//使用pop方法移除元素
+		for (var i = 0; i<ln; i++) {
+			document.write(fifoArray.pop()+"<br/>");
+		}
+		//
+		document.write("length now is "+fifoArray.length+"<br/><br/>");
+
+	}
+	// ]]>
+</script>
+</head>
+<body onload="pushPop()">	
+		<p>Some page content</p>
+</body>
+</html>

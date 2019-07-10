@@ -1,0 +1,35 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Capture/Bubble</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	window.onload=function setup(evnt) {
+		//事件捕获
+		document.addEventListener('click',cascadeDown,true);
+		document.forms[0].addEventListener('click',cascadeDown,true);
+		document.forms[0].elements[0].addEventListener('click',cascadeDown,true);
+
+		//事件冒泡
+		document.addEventListener('click',bubbleUp,false);
+		document.forms[0].addEventListener('click',bubbleUp,false);
+		document.forms[0].elements[0].addEventListener('click',bubbleUp,false);
+	}
+	function cascadeDown(evnt){
+		alert("Capturing:"+this);
+	}
+	function bubbleUp(evnt){
+		alert("Bubbling:"+this);
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+	<form style="background-color: #f00;width: 100px;height: 100px;padding: 10px;">
+		<p>
+			<input type="submit" value="submit"/><br/><br/>
+		</p>
+	</form>
+</body>
+</html>

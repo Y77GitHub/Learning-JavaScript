@@ -1,0 +1,45 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Nested</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	// 外部函数
+	function outerFunc(base){		
+		var punc="!";
+		//返回内部函数
+		return function(ext){
+			return base+ext+punc;
+		}
+	}
+	function processNested(){
+		//创建对内部函数的访问
+		var baseString=outerFunc("Hello ");
+
+		//内部函数仍然有权限访问外部函数的参数
+		var newString=baseString("Word");
+		alert(newString);
+
+		//再次调用
+		var notherString=baseString("Reader");
+		alert(newString);
+
+		alert(notherString);
+
+		//创建另一个内部函数实例
+		var anotherBase=outerFunc("Hiya,hey ");
+
+		//另一个本地字符串
+		var lasterString=anotherBase("you");
+		alert(newString);
+
+		alert(lasterString);
+	}
+	// ]]>
+</script>
+</head>
+<body onload="processNested()">	
+		<p>Some page content</p>
+</body>
+</html>

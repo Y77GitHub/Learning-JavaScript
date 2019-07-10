@@ -1,0 +1,47 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>TEST</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function findFactorial(n){		
+		if(n==0)return 1;
+		return(n*findFactorial(n-1));
+	}
+	var num=findFactorial(4);
+	document.write(num);
+
+
+	function makeArray(){
+		var arr=[1,5,3];
+		alert(arr);
+		alertArray(arr);
+		alert(arr);
+	}
+	// document.write(ary);
+	function alertArray(arrOfNumbers){
+		for(var i=0;i<arrOfNumbers.length;i++){
+			switch(arrOfNumbers[i]){
+				case 1:arrOfNumbers[i]="one";break;
+				case 2:arrOfNumbers[i]="two";break;
+				case 3:arrOfNumbers[i]="three";break;
+				case 4:arrOfNumbers[i]="four";break;
+				case 5:arrOfNumbers[i]="five";break;
+			}
+		}
+	}
+
+
+	function invokeFunction(dataObject,functionToCall){
+		functionToCall(dataObject);
+	}
+	var funcCall=new Function('x','alert(x)');
+	invokeFunction('hello','funcCall');
+	// ]]>
+</script>
+</head>
+<body onload="makeArray()">	
+		<p>Some page content</p>
+</body>
+</html>

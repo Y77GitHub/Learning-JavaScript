@@ -1,0 +1,53 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Callbacks</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	//用来检查颜色值范围的回调函数 
+	function checkColor(element,index,array){		
+		return (element>=0&&element<256);
+	}
+
+	//检查以确保有3个RGB色
+	function checkCount(element,index,array){		
+		return (element.length==3);
+	}
+	function testingCallbacks(){
+		//color数组
+		var colors=new Array();
+		colors[0]=[0,262,255];
+		colors[1]=[255,255,255];
+		colors[2]=[255,0,0];
+		colors[3]=[0,255,0];
+		colors[4]=[0,0,255];
+		colors[5]=[-5,999,255];
+		colors[6]=[255,255,1204556];
+
+		//基于颜色值范围进行过滤
+		var testedColors=new Array();
+		for(var i in colors){
+			testedColors[i]=colors[i].filter(checkColor);
+		}
+
+		//输出第一轮的结果
+		document.write("<h3>First check</h3>");
+		for(i in testedColors){
+			document.write(testedColors[i]+"<br/>");
+		}
+		//过滤出少于三个值的元素
+		var newTested=testedColors.filter(checkCount);
+		document.write("<h3>Seccond check</h3>");
+		//输出余下的元素
+		for(i in newTested){
+			document.write(newTested[i]+"<br/>");
+		}
+	}
+	// ]]>
+</script>
+</head>
+<body onload="testingCallbacks()">	
+		<p>Some page content</p>
+</body>
+</html>

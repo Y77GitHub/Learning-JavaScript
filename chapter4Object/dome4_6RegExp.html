@@ -1,0 +1,35 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>RegExp string matching</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	window.onload=function (){		
+		var re=/(ds)+(j+s)/ig;
+		//var re=("(ds)+(j+s)","ig");
+		var str="cfdsJS*(&dsjjjsYJSjs 888dsdsJS";
+		var resultArray=re.exec(str);
+		while(resultArray){
+			document.write(resultArray[0]);
+			document.write(" next match starts at "+re.lastIndex+"<br/>");
+			for (var i = 1; i< resultArray.length; i++) {
+				document.write("substring of  "+resultArray[i]+"<br/>");
+			}
+			document.write("<br/>");
+			resultArray=re.exec(str);
+		}
+
+		var re2=/JavaScript rules/;
+		var str2="JavaScript rules";
+		var str3="savascript rules";//区分大小写
+		if(re2.test(str2)){document.write("match1!!!")}
+		if(re2.test(str3)){document.write("match2!!!")}
+	}
+	// ]]>
+</script>
+</head>
+<body>	
+		<p>Some page content</p>
+</body>
+</html>
