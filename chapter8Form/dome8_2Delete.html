@@ -1,0 +1,60 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Select</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	function catchEvent(eventObj,event,eventHandler) {
+		if(eventObj.addEventListener){
+			eventObj.addEventListener(event,eventHandler,false);
+		}else if (eventObj.attachEvent) {
+			event="on"+event;
+			eventObj.attachEvent(event,eventHandler);
+		}
+	}
+
+	function cancelEvent(event) {
+		if(event.preventDefault){
+			event.preventDefault();
+			event.stopPropagation();
+		}else {
+			event.returnValue=false;
+			event.cancelBubble=true;
+		}
+	}
+
+	catchEvent(window,"load",setupEvents);
+
+	function setupEvents(evnt){
+		catchEvent(document.getElementById("someForm"),"submit",checkForm);
+	}
+
+	function checkForm(evnt){
+		var theEvent=evnt?evnt:window.event;
+
+		var opts=document.getElementById("someForm").selectOpts.options;
+
+		for (var i =0; i <opts.length; i++) {
+			if(opts[i].selected){
+				opts[i]=null;
+			}
+		}
+		cancelEvent(theEvent);
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+		<form id="someForm">
+			<p>
+				<select id="selectOpts" multiple="multiple">
+					<option value="Opt1">Apple</option>
+					<option value="Opt2">Banana</option>
+					<option value="Opt3">Pear</option>
+				</select>
+				<input type="submit" value="submit">
+			</p>
+		</form>
+</body>
+</html>
