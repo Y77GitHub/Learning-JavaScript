@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Slideshow</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	var currentPhoto=0;
+	var pics=new Array();
+	window.onload=function(){
+		for (var i = 0; i < 5; i++) {
+			pics[i]=new Image();
+		}
+		pics[0].src="fig00.jpg";
+		pics[1].src="fig01.jpg";
+		pics[2].src="fig02.jpeg";
+		pics[3].src="fig03.jpg";
+		pics[4].src="fig04.jpg";
+
+		document.getElementById("next").onclick=nextPic;
+		document.getElementById("prev").onclick=prevPic;
+	}
+	function changePhoto(photo){
+		document.images[0].src=pics[photo].src;
+	}
+	function nextPic(){
+		currentPhoto++;
+		if (currentPhoto<pics.length) {
+			changePhoto(currentPhoto);
+		}else{
+			alert("at the end of the photo list");
+		}
+	}
+	function prevPic(){
+		if (currentPhoto>0) {
+			currentPhoto--;			
+			changePhoto(currentPhoto);
+		}else{
+			alert("at the begining of the photo list");
+		}
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+		<div id="next"><span>Next</span></div>
+		<div id="prev"><span>Previous</span></div>
+		<img src="fig00.jpg" style="width: 50%;">
+</body>
+</html>

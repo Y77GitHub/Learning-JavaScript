@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>innerHTML</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	// 如果启用cookie
+	window.onload=function(){
+		if (navigator.cookieEnabled) {
+			var sum=readCookie("sum");
+			if (sum) {
+				var iSum=parseInt(sum)+1;
+				alert("cookie count is "+iSum);
+				if (iSum>5) {
+					eraseCookie("sum");
+				}else{
+					setCookie("sum",iSum);
+				}
+			}else{
+				alert("no cookie,setting now");
+				setCookie("sum",0);
+			}
+		}
+	}
+
+	//将cookie有效期设为2010年
+	function setCookie(key,value){
+		var cookieDate=new Date(2010,11,11,17,22,22);
+		document.cookie=key+"="+encordeURI(value)+";expires="+cookieDate.toGMTString()+";path=/";
+	}
+	//在每个cookie之前用分号隔开
+	function readCookie(key){
+		var cookie=document.cookie;
+		var first=cookie.indexOf(key+"=");
+
+		//存在cookie
+		if (first>=0) {
+			var str=cookie.substring(first,cookie.length);
+			var last=str.indexOf(";");
+
+			//如果是最后一个cookie
+			if (last<0) {
+				last=str.length;
+			}
+
+			//获取cookie的值
+			str=str.substring(0,last).split("=");
+			return decodeURI(str[1]);
+		}else{
+			return null;
+		}
+	}
+
+	//将为cookie的有效日期设置成过去，以达到删除cookie的目的
+	function eraseCookie(key){
+		var cookieDate=new Date(2000,11,12,23,12,12);
+		document.cookie=key+"=;expires="+cookieDate.toGMTString()+";path=/";
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+		<P>some content</P>
+</body>
+</html>

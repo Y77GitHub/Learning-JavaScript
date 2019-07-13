@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Timers</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	// <![CDATA[
+	window.onload=function(){
+		document.write("<h1>screen object</h1><p>");
+		document.write("screen.availTop:"+screen.availTop+"<br/>");
+		document.write("screen.availLeft:"+screen.availLeft+"<br/>");
+		document.write("screen.availWidth:"+screen.availWidth+"<br/>");
+		document.write("screen.availHeight:"+screen.availHeight+"<br/>");
+		document.write("screen.colorDepth:"+screen.colorDepth+"<br/>");
+		document.write("screen.pixelDepth:"+screen.pixelDepth+"<br/></p>");
+
+		document.write("<h1>navigator object</h1><p>");
+		document.write("navigator.userAgent:"+navigator.userAgent+"<br/>");
+		document.write("navigator.appName:"+navigator.appName+"<br/>");
+		document.write("navigator.appCodeName:"+navigator.appCodeName+"<br/>");
+		document.write("navigator.appVersion:"+navigator.appVersion+"<br/>");
+		document.write("navigator.appMinorVersion:"+navigator.appMinorVersion+"<br/>");
+		document.write("navigator.platform:"+navigator.platform+"<br/>");
+		document.write("navigator.cookieEnabled:"+navigator.cookieEnabled+"<br/>");
+		document.write("navigator.onLine:"+navigator.onLine+"<br/>");
+		document.write("navigator.userLanguage:"+navigator.userLanguage+"<br/>");
+
+		if (navigator.mimeTypes) {
+			document.write("navigator.mimeTypes[1].description:"+navigator.mimeTypes[1].description+"<br/>");
+			document.write("navigator.mimeTypes[1].type:"+navigator.mimeTypes[1].type+"<br/>");
+		}
+		if (navigator.plugins) {
+			for (var i = 0; i <navigator.plugins.length; i++) {
+			document.write("navigator.plugins[i].description:"+navigator.plugins[i].description+"<br/>");
+			}
+		}
+
+		document.write("</p>");
+		document.onclick=function(){
+			history.back();
+			return false;
+		}
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+		<h1>Hello</h1>
+</body>
+</html>
