@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Page as Tree</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	//随机色彩生成器
+	function randomColor() {
+		var r=Math.floor(Math.random()*255).toString(16);
+		r=(r.length<2)?"0"+r:r;
+		var g=Math.floor(Math.random()*255).toString(16);
+		g=(g.length<2)?"0"+g:g;
+		var b=Math.floor(Math.random()*255).toString(16);
+		b=(b.length<2)?"0"+b:b;
+		return "#"+r+g+b;
+	}
+	//输出部分节点属性
+	function outputNodeProps(nd){
+		var strNode="Node Type:"+nd.nodeType;
+		strNode+="\nNode Name:"+nd.nodeName;
+		strNode+="\nNode Value:"+nd.nodeValue;
+
+		//如果设置了样式（元素的属性）
+		if (nd.style) {
+			var clr=randomColor();
+			nd.style.backgroundColor=clr;
+			strNode+="\nbackgroundColor:"+clr;
+		}
+
+		//输出该节点的属性
+		alert(strNode);
+
+		//现在处理该节点的子节点
+		var children=nd.childNodes;
+		for (var i = 0; i < children.length; i++) {
+			outputNodeProps(children[i]);
+		}
+	}
+	window.onload=function(){
+		outputNodeProps(document.body);
+	}
+</script>
+</head>
+<body >	
+		<div id="div1">
+			<h1>Header</h1>
+			<!--paragraph one-->
+			<p>To better understand the document tree,consider a web page that has a head and body section,a page title,and the body contains a div element that itself contains a header and two paragraphs. One of the paragaphs contains <i>italicized text</i>;the other has an image--not an uncommon web page.</p>
+			<!--paragraph two-->
+			<p>Second paragaph with image.<img src="../fig03.jpg" alt="happy"></p>
+		</div>
+</body>
+</html>

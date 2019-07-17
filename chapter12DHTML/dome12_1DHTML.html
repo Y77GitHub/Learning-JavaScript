@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>DHTML</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	window.onload=function(){
+		setTimeout("changeCSS()",3000);
+	}
+
+	function changeCSS(){
+		var div=document.getElementById("div1");
+		div.style.backgroundColor="pink";
+		div.style.width="500px";
+		div.style.color="#fff";
+		div.style.height="500px";
+		div.style.paddingLeft="100px";
+		div.style.paddingTop="100px";
+		div.style.fontFamily="Verdana";
+		div.style.borderColor="#000";
+	}
+</script>
+</head>
+<body >	
+	<div id="div1">
+		<p>Hello CSS</p>
+	</div>
+</body>
+</html>

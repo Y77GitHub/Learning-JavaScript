@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>DHTML</title>
+<meta charset="utf-8">
+<style type="text/css">
+	#div1{
+		background-color:#ffff00;
+	}
+</style>
+<script type="text/javascript">
+	function getStyle(obj,jspprop,cssprop){
+		if (obj.currentStyle) {
+			alert('currentStyle '+obj.currentStyle[jspprop]);
+		}else if (window.getComputedStyle) {
+			alert('getComputedStyle '+document.defaultView.getComputedStyle(obj,null).getPropertyValue(cssprop));
+		}else{
+			alert("neither currentStyle nor getComuter supported")
+		}
+	}
+
+	function changeElement(){
+		var obj=document.getElementById("div1");
+		alert(obj.style.backgroundColor);
+		getStyle(obj,"backgroundColor","background-color");
+		obj.style.backgroundColor="#ff0000";
+		alert(obj.style.backgroundColor);
+	}
+
+	document.onclick=changeElement;
+</script>
+</head>
+<body >	
+	<div id="div1">
+		<p>Hello CSS</p>
+	</div>
+</body>
+</html>

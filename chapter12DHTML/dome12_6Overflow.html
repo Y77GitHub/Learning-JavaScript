@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Overflow</title>
+<meta charset="utf-8">
+<style type="text/css">
+	div{
+		border: 1px solid #ccc;
+	}
+	#div1{
+		width: 400px;
+		height: 150px;
+		overflow: visible;
+	}
+	#div2{
+		position: absolute;
+		left: 450px;
+		top: 10px;
+		width: 400px;
+		height: 150px;
+		overflow: scroll;
+	}
+</style>
+<script type="text/javascript">
+	function switchContent(){
+		var div1=document.getElementById("div1").innerHTML;
+		var div2=document.getElementById("div2").innerHTML;
+		document.getElementById("div1").innerHTML=div2;
+		document.getElementById("div2").innerHTML=div1;
+	}
+	document.onclick=switchContent;
+</script>
+</head>
+<body >	
+	<div id="div1">
+		<p>One of the first preserkvn sjids ijdsfij dsjfjdijsdj reij,rfuei rhsdk akejf skdfj safj,sifj dsfj dsj aow alk; sdfoii weri weiiw efij erij eirj eiwr bhbsdf jkasd djas sdkj sdkj ,djs jkd dsfj dkf .sdhfi sdkj sdjf sdjk sdkj ,sajdu adki aief aoedi asdi asdj asdi, asi sdi dsf ijdf adfg ijdf.</p>
+		<p>One of the first preserkvn sjids ijdsfij dsjfjdijsdj reij,rfuei rhsdk akejf skdfj safj,sifj dsfj dsj aow alk; sdfoii weri weiiw efij erij eirj eiwr bhbsdf jkasd djas sdkj sdkj ,djs jkd dsfj dkf .sdhfi sdkj sdjf sdjk sdkj ,sajdu adki aief aoedi asdi asdj asdi, asi sdi dsf ijdf adfg ijdf.</p>
+	</div>
+	<div id="div2"><p>Smaller item.</p></div>
+</body>
+</html>

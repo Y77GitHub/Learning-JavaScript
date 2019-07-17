@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>readThis</title>
+<meta charset="utf-8">
+<style type="text/css">
+	div{
+		width: 600px;
+	}
+	#smaller{
+		background-color: #00f;
+		cursor: pointer;
+	}
+	#larger{
+		background-color: #0f0;
+		cursor: pointer;
+	}
+	#div1{
+		font-size: 15px;
+		letter-spacing: normal;
+		text-align: left;
+		text-transform: none;
+		line-height: 18px;
+		font-weight: normal;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("smaller").onclick=makeLess;
+		document.getElementById("larger").onclick=makeMore;
+	}
+
+	function makeMore(){
+		var div=document.getElementById("div1");
+		div.style.letterSpacing="5px";//字间隔
+		div.style.textAlign="justify";
+		div.style.textTransform="uppercase"
+		div.style.fontSize="25px";
+		div.style.fontWeight="900";//字体粗细
+		div.style.lineHeight="30px";
+	}
+	function makeLess(){
+		var div=document.getElementById("div1");
+		div.style.letterSpacing="normal";
+		div.style.textAlign="left";
+		div.style.textTransform="none"
+		div.style.fontSize="15px";
+		div.style.fontWeight="normal";
+		div.style.lineHeight="18px";
+	}
+	
+</script>
+</head>
+<body >	
+	<div id="smaller"><p>Make smaller</p></div>
+	<div id="larger"><p>Make larger</p></div>
+	<div id="div1">
+		<p>Hello CSS,dfgo,dfppdb dgo90a,rfoije9rj rfkoas erefojfidj ,dfgjod xz;kdosoa rej faji rfjaruf idrjrrulk,eif9w efk,sdfj,aosa,ijidf dsfj spoa oaskf ,asdfjo ,saidfop  sifosi ooiasfj j9sdif sfoi,poe ksdfj osdf,ofss fsdk sdfk sdfl sdfk alr dsfo .</p>
+	</div>
+</body>
+</html>
