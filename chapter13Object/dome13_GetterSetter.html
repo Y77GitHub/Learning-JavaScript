@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Tune Object</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	//Tune是一个基本的shell对象
+	function Tune () {
+		
+	}
+	//方法
+	function printTitle(){
+		document.writeln(this.title+"<br/>");
+	}
+	window.onload=function(){
+
+		//通过prototype属性扩展对象
+		var t=Tune.prototype;
+		//getter&setter
+		t.__defineGetter__("title",function(){return "Title is "+this.myTitle;});
+		t.__defineSetter__("title",function(tt){this.myTitle=tt;});
+
+		t.print=printTitle;
+
+		var oneTune=new Tune;
+		oneTune.title="One Title";
+		oneTune.print();
+
+		var anotherTune=new Tune;
+		anotherTune.title="Another Title";
+		anotherTune.print();
+	}
+</script>
+</head>
+<body >	
+	<p>Some Content</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Tune Object</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	function Tune (title) {
+		this.title=title;
+	}
+
+	function printTitle(){
+		document.writeln(this.title+"<br/>");
+	}
+	window.onload=function(){
+		Tune.prototype.print=printTitle;
+
+		var oneTune=new Tune("One Title");
+		oneTune.print();
+
+		var anotherTune=new Tune("Another Title");
+		anotherTune.print();
+	}
+</script>
+</head>
+<body >	
+	<p>Some Content</p>
+</body>
+</html>

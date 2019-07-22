@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Constructor Chaining</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	function Tune(title,type) {
+		this.title=title;
+		this.type=type;
+		this.getTitle=function(){
+			return "Song:"this.title+"Type:"+this.type;
+		}
+	}
+		
+	function Artist_tune(title,type,artist){
+		this.artist=artist;
+		this.toString("Artist is "+artist);
+		Tune.apply(this,arguments);
+		this.toString=function(){
+			return "Artist:"+this.artist+" "+this.getTitle();
+		}
+	}
+
+	window.onload=function(){
+		Artist_tune.prototype=new Tune();
+		var song=new Artist_tune("I want to hold your hand","rock","Beatles");
+		document.write(song.toString());
+	}
+</script>
+</head>
+<body >	
+	<p>Some Content</p>
+</body>
+</html>

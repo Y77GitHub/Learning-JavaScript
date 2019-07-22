@@ -1,0 +1,86 @@
+<Trasitional//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Encapsulating</title>
+<meta charset="utf-8">
+<style type="text/css">
+	div{
+		position: absolute;
+		top:30px;
+		left:50px;
+	}
+	#div2{
+		opacity: 0.0;filter: alpha(opacity=0);
+	}
+	#div1 img{
+		filter:
+		progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../fig03.jpg,sizingMethod='scale');
+	}
+	#div2 img{
+		filter:
+		progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../fig01.jpg,sizingMethod='scale');
+	}
+</style>
+<script type="text/javascript">
+	// <![CDATA[
+	//全局
+	var theobjs=new Array();
+
+	document.onclick=function(){
+		//淡出div1
+		var currentOpacity=theobjs["div1"].objGetOpacity();
+
+		//结束变换
+		if (currentOpacity<=0) {
+			document.onclick=null;
+			return;
+		}
+		currentOpacity-=0.1;
+		theobjs["div1"].objSetOpacity(currentOpacity);
+
+		//展现div2
+		currentOpacity=theobjs["div2"].objGetOpacity();
+		currentOpacity+=0.1;
+		theobjs["div2"].objSetOpacity(currentOpacity);
+
+	}
+
+	function DivObj(obj){
+		this.obj=obj;
+		
+		this.objGetOpacity=function(){
+			return parseFloat(this.obj.style.opacity);
+		}
+
+		this.alphaOpacity=function(value){
+			var opacity=value*100;
+			this.obj.style.filter="alpha(opacity="+opacity+")";
+		};
+		this.cssOpacity=function(value){
+			this.obj.style.opacity=value;
+		};
+		this.objSetOpacity=function(value){
+			this.alphaOpacity(value);
+			this.cssOpacity(value);
+		}
+	}
+	window.onload=function(){
+		theobjs["div1"]=new DivObj(document.getElementById("div1"));
+		theobjs["div2"]=new DivObj(document.getElementById("div2"));
+
+		//设置最初的不透明度
+		theobjs["div1"].objSetOpacity(1.0);
+		theobjs["div2"].objSetOpacity(0.0);
+	}
+	// ]]>
+</script>
+</head>
+<body >	
+	<div id="div1">
+		<img src="../fig03.jpg" alt="" style="width: 100px;"/>
+	</div>
+	<div id="div2">
+		<img src="../fig01.jpg" alt="" style="width: 200px;" />
+	</div>
+</body>
+</html>

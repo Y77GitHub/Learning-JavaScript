@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http:www.w3.org/TR/xhtml1/DTD/xhtmml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>String trim</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	String.prototype.trim = function() {
+		return (this.replace(/^[\s\xA0]+/,"").replace(/^[\s\xA0]+$/,""));
+	}
+	window.onload=function(){
+		var sObj=new String(" This is the string ");
+		document.write("--"+sObj+"--"+"<br/>");
+
+		var sTxt=sObj.trim();
+		document.write("--"+sTxt+"--"+"<br/>");
+
+	}
+</script>
+</head>
+<body >	
+	<p>Some Content</p>
+</body>
+</html>
